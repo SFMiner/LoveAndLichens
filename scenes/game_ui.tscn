@@ -1,0 +1,67 @@
+[gd_scene load_steps=2 format=3 uid="uid://o7deeup7nod3"]
+
+[ext_resource type="Theme" uid="uid://b2lur8a4jrpc" path="res://themes/Main_theme.tres" id="1_pcr2c"]
+
+[node name="gameUI" type="Control" groups=["UI"]]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Panel" type="Panel" parent="." groups=["UI"]]
+layout_mode = 0
+offset_left = 180.0
+offset_top = 204.0
+offset_right = 566.0
+offset_bottom = 371.0
+theme = ExtResource("1_pcr2c")
+
+[node name="btn_NewGame" type="Button" parent="Panel" groups=["UI"]]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 19.0
+offset_right = 118.0
+offset_bottom = 51.0
+theme = ExtResource("1_pcr2c")
+text = "New Game"
+
+[node name="btn_LoadGame" type="Button" parent="Panel" groups=["UI"]]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 64.0
+offset_right = 118.0
+offset_bottom = 96.0
+theme = ExtResource("1_pcr2c")
+text = "Load Game"
+
+[node name="btn_SaveGame" type="Button" parent="Panel" groups=["UI"]]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 111.0
+offset_right = 118.0
+offset_bottom = 143.0
+theme = ExtResource("1_pcr2c")
+text = "Save game"
+
+[node name="lbl_gold" type="Label" parent="." groups=["UI"]]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 25.0
+offset_right = 180.0
+offset_bottom = 88.0
+theme = ExtResource("1_pcr2c")
+text = "GOLD:"
+
+[node name="lbl_gold_count" type="RichTextLabel" parent="lbl_gold" groups=["UI"]]
+layout_mode = 0
+offset_left = 74.0
+offset_right = 294.0
+offset_bottom = 63.0
+text = "1000"
+
+[node name="lbl_health" type="Label" parent="." groups=["UI"]]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 76.0
+offset_right = 321.0
+offset_bottom = 139.0
+theme = ExtResource("1_pcr2c")
+text = "HEALTH:"

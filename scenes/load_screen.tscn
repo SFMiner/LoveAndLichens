@@ -1,0 +1,77 @@
+[gd_scene load_steps=3 format=3 uid="uid://bbjyu07j6d4uq"]
+
+[ext_resource type="Theme" uid="uid://b2lur8a4jrpc" path="res://themes/Main_theme.tres" id="1_jyv20"]
+[ext_resource type="Script" path="res://scripts/load_screen.gd" id="2_gvryh"]
+
+[node name="LoadScreen" type="Control"]
+layout_direction = 1
+layout_mode = 3
+anchor_left = 0.362847
+anchor_top = 0.384259
+anchor_right = 0.636285
+anchor_bottom = 0.614198
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("1_jyv20")
+script = ExtResource("2_gvryh")
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="PopupPanel" parent="."]
+initial_position = 1
+size = Vector2i(320, 148)
+visible = true
+min_size = Vector2i(200, 0)
+theme = ExtResource("1_jyv20")
+
+[node name="HSplitContainer" type="HSplitContainer" parent="Panel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 316.0
+offset_bottom = 144.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+split_offset = 160
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/HSplitContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="btn_NewGame" type="Button" parent="Panel/HSplitContainer/VBoxContainer" groups=["UI"]]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("1_jyv20")
+text = "New Game"
+
+[node name="btn_LoadGame" type="Button" parent="Panel/HSplitContainer/VBoxContainer" groups=["UI"]]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("1_jyv20")
+text = "Load Game"
+
+[node name="btn_SaveGame" type="Button" parent="Panel/HSplitContainer/VBoxContainer" groups=["UI"]]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("1_jyv20")
+text = "Save G	ame"
+
+[node name="btn_Refresh" type="Button" parent="Panel/HSplitContainer/VBoxContainer" groups=["UI"]]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("1_jyv20")
+text = "Refresh"
+
+[node name="lst_FileList" type="ItemList" parent="Panel/HSplitContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[connection signal="pressed" from="Panel/HSplitContainer/VBoxContainer/btn_LoadGame" to="." method="_on_btn_load_game_pressed"]
+[connection signal="pressed" from="Panel/HSplitContainer/VBoxContainer/btn_Refresh" to="." method="_on_btn_refresh_pressed"]
+[connection signal="item_selected" from="Panel/HSplitContainer/lst_FileList" to="." method="_on_lst_file_list_item_selected"]
