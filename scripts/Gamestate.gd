@@ -7,13 +7,49 @@ var relationships: Dictionary = {}
 var quests: Dictionary = {}
 var journal_entries: Array = []
 var main_scene
+var debugging = true
+var debug_statements = 0
+
+var spoke_oakhart_plants 
+var spoke_oakhart_creatures 
 
 
 
+func set_spoke_oakhart_creatures(boolean : bool):
+	spoke_oakhart_creatures = boolean
+
+func set_spoke_oakhart_plants(boolean : bool):
+	spoke_oakhart_plants = boolean
+
+func get_spoke_oakhart_creatures():
+	return spoke_oakhart_creatures
+
+func get_spoke_oakhart_plants():
+	return spoke_oakhart_plants
+
+
+func script_name(script):
+	var path = script.get_script().get_path()
+	var last_slash_index = path.rfind("/")
+	
+	debug_statements += 1
+	
+	var scriptname = path.substr(last_slash_index + 1, - 1)
+	
+	var return_string = str(debug_statements) + ": " + scriptname
+	
+	return return_string
 
 
 
+func print_test(print_data : String):
+	print(print_data)
 
+func is_true():
+	return true
+
+func is_false():
+	return false
 
 func set_main(new_scene):
 	main_scene = new_scene

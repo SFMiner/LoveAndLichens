@@ -12,7 +12,13 @@ var items : Array = []
 
 signal item_used(item_data)
 
+var project_debug
+var local_debug = true
+var script_debug
+
 func _ready():
+	project_debug = GameState.debugging
+	script_debug = project_debug and local_debug
 	setup_inventory_ui()
 	resize_panel()
 	self.visible = false

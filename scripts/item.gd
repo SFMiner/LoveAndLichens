@@ -22,16 +22,22 @@ extends StaticBody2D
 @onready var texture_rect = $TextureRect
 
 # Called when the node enters the scene tree for the first time.
+var project_debug
+var local_debug = true
+var script_debug
+
 func _ready() -> void:
+	project_debug = GameState.debugging
+	script_debug = project_debug and local_debug
 	if not self.is_in_group("Collectible"):
 		add_to_group("Collectible")
-		print (name, " added to Collectible.")
+		if script_debug: print(GameState.script_name(self),  ": _ready(): added to Collectible.")
 	else:
-		print (name, " is alraedy in Collectible.")
+		if script_debug: print(GameState.script_name(self),  ": _ready(): is alraedy in Collectible.")
 	if item_name:
 		var old_name = name
 		name = item_name
-		print (old_name, " has been renamed to ", name, ".")
+		if script_debug: print(GameState.script_name(self),  ": _ready(): ", old_name, " has been renamed to ", name, ".")
 	set_texture()
 
 

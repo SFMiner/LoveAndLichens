@@ -6,15 +6,8 @@ Player: It's great to be here, Dr. Oakhart! This forest looks magical.
 
 Dr. Oakhart: Indeed it is! We study the unique flora and fauna of this mystical ecosystem. What brings you to our humble station?
 - I'm here to study the magical plants.
-	Dr. Oakhart: Excellent choice! Our magical flora is truly fascinating.
-	- Can you tell me more about the plants here?
-	- Do you have any specific research projects I could join?
 - I'm interested in the enchanted creatures. (do.GameState.print("Player expressed interest in creatures"))
-	Dr. Oakhart: Ah, a zoologist in the making! We have some remarkable creatures here.
-	- What's the most unusual creature you've encountered?
-	- Are there any dangerous animals I should be aware of?
 - I'm just exploring. Is it okay if I look around?
-	Dr. Oakhart: Of course! Feel free to explore, but please be careful and respectful of the forest.
 
 Dr. Oakhart: Before you go, I must ask: do you have any experience with magical ecosystems?
 - Yes, I've studied them before.
@@ -34,3 +27,35 @@ Dr. Oakhart: Now, let me show you around our research station. (if GameState.is_
 - Can we start with the basics first?
 
 Enjoy your time here at the Enchanted Forest Research Station!
+
+
+
+
+~ enter_biology_lab
+Player: Wow, this lab is amazing!
+=> talk_oakhart
+
+~ talk_oakhart
+Dr. Oakhart: Greetings, young scientist! Welcome to our Enchanted Forest Research Station. I'm Dr. Oakhart, the lead botanist here.
+Player: It's great to be here, Dr. Oakhart! This forest looks magical.
+Dr. Oakhart: Indeed it is! We study the unique flora and fauna of this mystical ecosystem. What brings you to our humble station?
+=> oakhart_options_start
+
+~oakhart_options_start
+- I'm here to study the magical plants. [if not GameState.get_spoke_oakhart_plants()]
+    => magical_plants"
+- I'm interested in the enchanted creatures. [if not GameState.get_spoke_oakhart_creatures()]
+    => enchanted_creatures
+- Never Mind (leave conversation)
+    => end_conversation
+
+~ magical_plants
+do.GameState.set_spoke_oakhart_plants(true)
+Dr. Oakhart: Ah, a budding botanist! Our magical plants are truly fascinating...
+=> oakhart_options_start"
+
+~ enchanted_creatures
+do.GameState.set_spoke_oakhart_creatures(true)
+Dr. Oakhart: The creatures here are unlike any you've seen before...
+=> oakhart_options_start"
+

@@ -11,7 +11,9 @@ extends Node
 
 func _ready():
 	GameState.set_main(self)
-	
+	GameState.print_test("GameState.print_test() is working")
+	print("scriptname = ", GameState.script_name(self))
+
 var save_directory = "user://journal/"
 
 signal file_loaded(filename)
