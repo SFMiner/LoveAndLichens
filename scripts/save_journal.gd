@@ -1,9 +1,9 @@
 extends Control
 
-@onready var entry_text = $Panel/VBoxContainer/EntryText
-@onready var filename_input = $Panel/VBoxContainer/HBoxContainer/FilenameInput
-@onready var btn_save = $Panel/VBoxContainer/HBoxContainer/btn_Save
-@onready var btn_cancel = $Panel/VBoxContainer/HBoxContainer2/btn_Cancel
+@onready var entry_text = $Panel/VBoxContainer/mc/EntryText
+@onready var filename_input = $Panel/VBoxContainer/HBoxContainer/mc/FilenameInput
+@onready var btn_save = $Panel/VBoxContainer/HBoxContainer/mc/btn_Save
+@onready var btn_cancel = $Panel/VBoxContainer/HBoxContainer2/mc/btn_Cancel
 
 
 var current_filename = ""

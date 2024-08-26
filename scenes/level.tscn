@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=3 uid="uid://ml166q8uy81l"]
+
+[ext_resource type="Script" path="res://scenes/level.gd" id="1_pn0lg"]
+[ext_resource type="PackedScene" uid="uid://bn3x2w11rvdjo" path="res://scenes/Item.tscn" id="1_tqook"]
+[ext_resource type="PackedScene" uid="uid://cr8vhfdhell3x" path="res://scenes/player.tscn" id="2_vhfpk"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_hbbqj"]
+vertices = PackedVector2Array(1139.03, 637, 8.96875, 637, 7.03125, 10, 1140.97, 10)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(1151, 0, -3, 0, -1, 647, 1149, 647)])
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_pn0lg")
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+scale = Vector2(1, 1.01961)
+navigation_polygon = SubResource("NavigationPolygon_hbbqj")
+
+[node name="Backgrounds" type="TileMapLayer" parent="."]
+
+[node name="Characters" type="Node" parent="."]
+
+[node name="Player" parent="Characters" instance=ExtResource("2_vhfpk")]
+position = Vector2(336, 313)
+
+[node name="items" type="Node" parent="."]
+
+[node name="Item" parent="items" instance=ExtResource("1_tqook")]
+position = Vector2(687, 319)
+item_name = "mana potion"
+sprite_sheet = "potions_Sheet"
+frame_index = 6
+
+[node name="Item2" parent="items" instance=ExtResource("1_tqook")]
+position = Vector2(867, 309)
+item_name = "healing potion"
+sprite_sheet = "potions_Sheet"
+frame_index = 8
+
+[node name="Item3" parent="items" instance=ExtResource("1_tqook")]
+position = Vector2(690, 175)
+item_name = "healing potion"
+sprite_sheet = "potions_Sheet"
+frame_index = 8
+
+[node name="Item4" parent="items" instance=ExtResource("1_tqook")]
+position = Vector2(695, 457)
+item_name = "mana potion"
+sprite_sheet = "potions_Sheet"
+frame_index = 6

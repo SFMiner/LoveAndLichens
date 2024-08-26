@@ -6,14 +6,14 @@
 [node name="SaveJournal" type="Control"]
 layout_direction = 1
 layout_mode = 3
-anchor_left = 0.247
-anchor_top = 0.215
+anchor_left = 0.250472
+anchor_top = 0.207284
 anchor_right = 0.753076
 anchor_bottom = 0.796
 offset_left = 0.455994
 offset_top = -0.320007
 offset_right = 0.455933
-offset_bottom = 0.191956
+offset_bottom = 4.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
@@ -28,27 +28,37 @@ size = Vector2i(576, 377)
 visible = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
-offset_left = 4.0
-offset_top = 4.0
-offset_right = 572.0
-offset_bottom = 373.0
+offset_right = 576.0
+offset_bottom = 377.0
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="Panel/VBoxContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer2"]
+[node name="mc2" type="MarginContainer" parent="Panel/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_5pbf1")
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer2/mc2"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Journal Entry"
 
-[node name="btn_Cancel" type="Button" parent="Panel/VBoxContainer/HBoxContainer2"]
+[node name="mc" type="MarginContainer" parent="Panel/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+
+[node name="btn_Cancel" type="Button" parent="Panel/VBoxContainer/HBoxContainer2/mc"]
 custom_minimum_size = Vector2(20, 0)
 layout_mode = 2
 size_flags_vertical = 4
 theme_override_font_sizes/font_size = 20
 text = "x"
 
-[node name="EntryText" type="TextEdit" parent="Panel/VBoxContainer"]
+[node name="mc" type="MarginContainer" parent="Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="EntryText" type="TextEdit" parent="Panel/VBoxContainer/mc"]
 layout_mode = 2
 size_flags_vertical = 3
 placeholder_text = "Write journal entry here."
@@ -56,16 +66,25 @@ placeholder_text = "Write journal entry here."
 [node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer"]
 layout_mode = 2
 
-[node name="FilenameInput" type="LineEdit" parent="Panel/VBoxContainer/HBoxContainer"]
+[node name="mc" type="MarginContainer" parent="Panel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_bottom = 8
+
+[node name="FilenameInput" type="LineEdit" parent="Panel/VBoxContainer/HBoxContainer/mc"]
 layout_mode = 2
 size_flags_horizontal = 3
 placeholder_text = "*.save"
 
-[node name="btn_Save" type="Button" parent="Panel/VBoxContainer/HBoxContainer"]
+[node name="mc2" type="MarginContainer" parent="Panel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 8
+
+[node name="btn_Save" type="Button" parent="Panel/VBoxContainer/HBoxContainer/mc2"]
 custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
 text = "Save
 "
 
-[connection signal="pressed" from="Panel/VBoxContainer/HBoxContainer2/btn_Cancel" to="." method="_on_brn_cancel_pressed"]
-[connection signal="pressed" from="Panel/VBoxContainer/HBoxContainer/btn_Save" to="." method="_on_btn_save_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/HBoxContainer2/mc/btn_Cancel" to="." method="_on_brn_cancel_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/HBoxContainer/mc2/btn_Save" to="." method="_on_btn_save_pressed"]

@@ -1,0 +1,31 @@
+Welcome to the Enchanted Forest Research Station
+
+Dr. Oakhart: Greetings, young scientist! Welcome to our Enchanted Forest Research Station. I'm Dr. Oakhart, the lead botanist here.
+
+Player: It's great to be here, Dr. Oakhart! This forest looks magical.
+
+Dr. Oakhart: Indeed it is! We study the unique flora and fauna of this mystical ecosystem. What brings you to our humble station?
+- I'm here to study the magical plants.
+	Dr. Oakhart: Excellent choice! Our magical flora is truly fascinating.
+	- Can you tell me more about the plants here?
+	- Do you have any specific research projects I could join?
+- I'm interested in the enchanted creatures. (do.add_interest("creatures"))
+	Dr. Oakhart: Ah, a zoologist in the making! We have some remarkable creatures here.
+	- What's the most unusual creature you've encountered?
+	- Are there any dangerous animals I should be aware of?
+- I'm just exploring. Is it okay if I look around?
+	Dr. Oakhart: Of course! Feel free to explore, but please be careful and respectful of the forest.
+
+Dr. Oakhart: Before you go, I must ask: do you have any experience with magical ecosystems?
+- Yes, I've studied them before.
+	Dr. Oakhart: Wonderful! You'll find plenty of familiar concepts here, along with some surprises.
+- No, this is my first time. (do.add_trait("novice"))
+	Dr. Oakhart: Not to worry! We all start somewhere. I'll make sure you receive proper guidance.
+
+Dr. Oakhart: One last thing: we have a strict "Leave No Trace" policy here. The forest is delicate and magical. Promise you'll respect it?
+- I promise to be careful and respectful.
+	Dr. Oakhart: Excellent! You'll fit right in here.
+- Can't I take just one small souvenir? (if has_trait("novice"))
+	Dr. Oakhart: I understand the temptation, but even small actions can have big consequences in a magical ecosystem. Let's focus on observing and learning instead.
+
+Enjoy your time here at the Enchanted Forest Research Station!

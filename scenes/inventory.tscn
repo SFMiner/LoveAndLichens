@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://dbe5ovhqrfyj7"]
+
+[ext_resource type="Theme" uid="uid://b2lur8a4jrpc" path="res://themes/Main_theme.tres" id="1_tshte"]
+[ext_resource type="Script" path="res://scripts/inventory.gd" id="1_y16a1"]
+
+[node name="Inventory" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_tshte")
+script = ExtResource("1_y16a1")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 2
+offset_left = 316.0
+offset_top = 179.0
+offset_right = 316.0
+offset_bottom = 179.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 0
+offset_left = 317.0
+offset_top = 180.0
+offset_right = 503.0
+offset_bottom = 328.0
+columns = 5

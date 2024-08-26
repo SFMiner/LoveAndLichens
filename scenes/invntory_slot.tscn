@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://d15ph0xlxajv3"]
+
+[ext_resource type="Texture2D" uid="uid://ch38re1rfjl4b" path="res://textures/inventory_slot_dual.png" id="1_iogfi"]
+
+[node name="ItemSlot" type="Panel"]
+custom_minimum_size = Vector2(34, 34)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1120.0
+offset_bottom = -616.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(17, 17)
+texture = ExtResource("1_iogfi")
+vframes = 2

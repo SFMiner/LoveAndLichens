@@ -1,8 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://dga03w3uegl0j"]
+[gd_scene load_steps=5 format=3 uid="uid://dga03w3uegl0j"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_okgh6"]
+[ext_resource type="PackedScene" uid="uid://ml166q8uy81l" path="res://scenes/level.tscn" id="2_kx5c4"]
+[ext_resource type="PackedScene" uid="uid://80spnfwk8dc5" path="res://scenes/ui.tscn" id="3_qypiw"]
+[ext_resource type="Script" path="res://scripts/dialog_manager.gd" id="4_rfy17"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_okgh6")
 
+[node name="Level" parent="." instance=ExtResource("2_kx5c4")]
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="UI" parent="CanvasLayer" instance=ExtResource("3_qypiw")]
+
+[node name="DialogManager" type="Node" parent="."]
+script = ExtResource("4_rfy17")

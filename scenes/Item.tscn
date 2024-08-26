@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bn3x2w11rvdjo"]
+
+[ext_resource type="Script" path="res://scripts/item.gd" id="1_n2vpk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qer08"]
+size = Vector2(63, 60)
+
+[node name="Item" type="StaticBody2D"]
+script = ExtResource("1_n2vpk")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_top = -60.0
+offset_right = 60.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(31.5, -30)
+shape = SubResource("RectangleShape2D_qer08")

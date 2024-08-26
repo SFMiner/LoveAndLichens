@@ -1,17 +1,17 @@
-[gd_resource type="Theme" load_steps=9 format=3 uid="uid://b2lur8a4jrpc"]
+[gd_resource type="Theme" load_steps=10 format=3 uid="uid://b2lur8a4jrpc"]
 
 [ext_resource type="FontFile" uid="uid://coos34ccryjx1" path="res://fonts/banana-chips.regular.otf" id="1_na7b5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e16ty"]
 content_margin_bottom = 2.0
-bg_color = Color(0.357159, 0.457082, 0.728883, 1)
+bg_color = Color(0.67085, 0.528446, 0.423599, 1)
 corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4bcgw"]
-bg_color = Color(0.146937, 0.362949, 1, 1)
+bg_color = Color(0.1652, 0.59, 0.33512, 1)
 corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
@@ -19,12 +19,12 @@ corner_radius_bottom_left = 5
 expand_margin_bottom = 2.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_13cwi"]
-bg_color = Color(0.317262, 0.31987, 0.967364, 1)
+bg_color = Color(0.2537, 0.59, 0.33217, 1)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
-border_color = Color(0.913609, 0.347485, 1, 1)
+border_color = Color(0, 0.901367, 0.181658, 1)
 corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
@@ -32,12 +32,12 @@ corner_radius_bottom_left = 5
 expand_margin_bottom = 2.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jjjt4"]
-bg_color = Color(0.215686, 0.298039, 0.6, 1)
+bg_color = Color(0.168375, 0.448262, 0.23318, 1)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
-border_color = Color(0.913609, 0.347485, 1, 1)
+border_color = Color(0, 0.901367, 0.181658, 1)
 corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
@@ -46,14 +46,14 @@ expand_margin_bottom = 2.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mk3fm"]
 content_margin_bottom = 2.0
-bg_color = Color(0.121449, 0.33509, 1, 1)
+bg_color = Color(0.22568, 0.585224, 0.309682, 1)
 corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mkgxu"]
-bg_color = Color(0.214753, 0.298425, 0.599409, 1)
+bg_color = Color(0.168375, 0.448262, 0.23318, 1)
 corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
@@ -65,7 +65,7 @@ content_margin_left = 6.0
 content_margin_top = 4.0
 content_margin_right = 6.0
 content_margin_bottom = 4.0
-bg_color = Color(0.261, 0.0725, 0.29, 0.466667)
+bg_color = Color(0.595, 0.379, 0.167, 0.541)
 border_width_left = 3
 border_width_top = 3
 border_width_right = 3
@@ -78,6 +78,9 @@ corner_radius_bottom_left = 10
 corner_detail = 3
 anti_aliasing = false
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oi3ib"]
+bg_color = Color(0.650207, 0.40562, 0.266609, 1)
+
 [resource]
 default_font = ExtResource("1_na7b5")
 Button/font_sizes/font_size = 29
@@ -88,15 +91,20 @@ Button/styles/hover = SubResource("StyleBoxFlat_13cwi")
 Button/styles/hover_pressed = SubResource("StyleBoxFlat_jjjt4")
 Button/styles/normal = SubResource("StyleBoxFlat_mk3fm")
 Button/styles/pressed = SubResource("StyleBoxFlat_mkgxu")
-Label/colors/font_color = Color(0.713726, 0.0823529, 0.831373, 1)
-Label/colors/font_outline_color = Color(0.713726, 0.0823529, 0.831373, 1)
+Label/colors/font_color = Color(0, 0.901367, 0.181658, 1)
+Label/colors/font_outline_color = Color(0, 0.901367, 0.181658, 1)
 Label/constants/outline_size = 2
 Label/font_sizes/font_size = 42
 Label/fonts/font = ExtResource("1_na7b5")
 Label/styles/normal = null
 LineEdit/font_sizes/font_size = 32
+MarginContainer/constants/margin_bottom = 0
+MarginContainer/constants/margin_left = 8
+MarginContainer/constants/margin_right = 8
+MarginContainer/constants/margin_top = 0
 Panel/styles/panel = SubResource("StyleBoxFlat_p5363")
-RichTextLabel/colors/default_color = Color(0.945565, 0.821071, 0, 1)
+PopupPanel/styles/panel = SubResource("StyleBoxFlat_oi3ib")
+RichTextLabel/colors/default_color = Color(0, 0.901367, 0.181658, 1)
 RichTextLabel/colors/font_outline_color = Color(1, 0.883333, 0, 1)
 RichTextLabel/constants/outline_size = 2
 RichTextLabel/font_sizes/bold_font_size = 42
